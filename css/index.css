@@ -1,6 +1,10 @@
 .container-fluid{
     padding: 100px 100px;
     background: rgb(255, 255, 255);
+    height:100%;
+}
+.navbar{
+	opacity:0.2;
 }
 .indeximage{
   border:10px solid transparent;
@@ -11,6 +15,9 @@
 }
 .indeximage:hover{
   border-color:#f1f1f1;
+}
+.tenki{
+	font-size:20px
 }
 .btn-register{
   background-color: rgb(247, 184, 75);
@@ -43,3 +50,4 @@
 #newsid{
   padding: 50px;height=200px;background-image: ;
 }
+

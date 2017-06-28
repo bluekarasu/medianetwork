@@ -18,6 +18,31 @@
 	function uec_file_get_contents($url){
 		$aContext=array(
 			'http'=>array(
+				'proxy'=> 'tcp://proxy.uec.ac.jp:8080',
+				'request_fulluri'=>True,
+			),
+		);
+		$cxContext=stream_context_create($aContext);
+		$res=file_get_contents($url,False,$cxContext);
+		return $res;
+	}
+	$url="http://weather.livedoor.com/forecast/webservice/json/v1?city=130010";
+	$res=uec_file_get_contents($url);
+	$json=json_decode($res,$assoc=true);
+	date_default_timezone_set('Asia/Tokyo');
+	$day=date("Y-m-d");
+	foreach($json["forecasts"]as $key){
+		if(strcmp($key["date"],$day)==0){
+			$datelabel=$key["dateLabel"];
+			$telop=$key["telop"];
+			$image=$key["image"]["url"];
+			if(isset($key['temperature']['min'])) $min_temp=$key["temperature"]["min"]["celsius"];
+			else	$min_temp="--";
+			if(isset($key['temperature']['max'])) $max_temp=$key["temperature"]["max"]["celsius"];
+			else	$max_temp="--";
+			break;
+		}
+	}
 				
 ?>
   <!--body -->
@@ -45,6 +70,13 @@
 	<div class="row">
 		<h3>Welcome to my webpage</h3>
 		<p>Lets get better together</p>
+		<div class="col-md-2 tenki" >
+		<?php echo $datelabel ?>の天気<br>
+		<?php echo $telop?><br>
+		<img src=<?php echo $image; ?> alt=<?php echo $telop;?>><br>
+		最高気温:<?php echo $max_temp ?><br>
+		最低気温:<?php echo $min_temp ?><br>
+		</div>
 	</div>
 </div>
 <section id="login" class="container-fluid text-center">
