@@ -1,0 +1,42 @@
+.container-fluid{
+    padding: 100px 100px;
+    background: rgb(255, 255, 255);
+}
+.indeximage{
+  border:10px solid transparent;
+  margin-bottom:30px;
+  width:70%;
+  height:80%;
+  opacity: :0.8;
+}
+.indeximage:hover{
+  border-color:#f1f1f1;
+}
+.btn-register{
+  background-color: rgb(247, 184, 75);
+  outline: none;
+  font-size:12px;
+  height:auto;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-color: rgb(46, 187, 33);
+}
+#about{
+  padding-top:50px;height:1000px;color: #fff; background-color: #643967;
+}
+#contact{
+  padding-top:50px;height:1000px;color: #fff; background-color: #000000;
+}
+
+.btn-login{
+  background-color: rgb(46, 251, 251);
+  outline: none;
+  font-size:12px;
+  height:auto;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-color: rgb(46, 187, 33);
+}
+#newsid{
+  padding: 50px;height=200px;background-image: ;
+}
