@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang=ja>
+<html lang='ja'>
 <head>
   <title>Challenge Yourself</title>
   <meta charset="utf-8">
@@ -12,7 +12,7 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="./js/ind.js"></script>
+    <script src="./js/index.js"></script>
 </head>
 <?php
 	function uec_file_get_contents($url){
@@ -71,11 +71,13 @@
 		<h3>Welcome to my webpage</h3>
 		<p>Lets get better together</p>
 		<div class="col-md-2 tenki" >
-		<?php echo $datelabel ?>の天気<br>
-		<?php echo $telop?><br>
-		<img src=<?php echo $image; ?> alt=<?php echo $telop;?>><br>
-		最高気温:<?php echo $max_temp ?><br>
-		最低気温:<?php echo $min_temp ?><br>
+			<?php echo $datelabel ?>の天気<br>
+			<?php echo $telop?><br>
+			<img src=<?php echo $image; ?> alt=<?php echo $telop;?>><br>
+			最高気温:<?php echo $max_temp ?><br>
+			最低気温:<?php echo $min_temp ?><br>
+		</div>
+		<div>
 		</div>
 	</div>
 

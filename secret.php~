@@ -34,9 +34,8 @@
         <a href="./challenge.html">Your challenges</a>
       </li>
 	<li>
-		<a href="./board.html">Board</a>
+	 <a href="./board.html">Board</a>
 	</li>
-
     </ul>
   </div>
 </nav>		

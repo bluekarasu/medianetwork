@@ -1,4 +1,8 @@
-
+<?php 
+	$boolean=isset($_COOKIE['name']);
+	if($boolean)
+		$name=$_COOKIE['name'];
+?>
 <!DOCTYPE html>
 <html lang=ja>
 <head>
@@ -42,10 +46,9 @@
 
 <div class="container-fluid text-center">
 <p>hello</p>
-	<?php if(isset($_COOKIE[$cku])):
-		$name=$_COOKIE[$cku]; ?>
+	<?php if($boolean): ?>
 		<h3>ようこそ</h3>
-		<p><?php echo $name?></p>
+		<p><?php echo $name; ?></p>
 	<?php else: ?>
 			<p>error</p>
 	<?php endif; ?>
