@@ -1,0 +1,42 @@
+<?php 
+	function getData(){
+		if(is_readable("./chatlog.csv")){
+			$fp=fopne("./chatlog.csv","r");
+			flock($fp,LOCK_SH);
+			$contents=array();
+			while($line=fgets($fp)){
+				$content=explode(",",$line);
+				array_push($contents,$content);
+			}
+			flock($fp,LOCK_UN);
+			fclose($fp);
+			return $contents;
+		}
+		else
+			return null;
+	}
+	function UpdateCheck(){
+		$data=getData();
+		$temp=$data;
+		while(count($data)==count($temp)){
+			$temp=getData();
+			sleep(2);
+		}
+		$contents=array_slice($temp,count($data));
+		return array(count($data),$contents);
+	}
+	set_time_limit(70);
+	list($num,$contents)=UpdateCheck();
+	$count=0;
+	for($i=count($contents)-1;$i>=0;$i--){
+		$content=$contents[$i];
+		if(count($content)==3){
+			echo "<p>".($count+$num+1);
+			echo "<strong>name:$content[0]</strong>";
+			echo "time:<time>$content[1]</time><br>$content[2]</p>";
+			echo "<hr>;
+			$count++;
+		}
+	}					
+?>
+

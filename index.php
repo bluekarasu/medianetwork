@@ -71,15 +71,17 @@
 		<h3>Welcome to my webpage</h3>
 		<p>Lets get better together</p>
 		<div class="col-md-2 tenki" >
-		<?php echo $datelabel ?>の天気<br>
-		<?php echo $telop?><br>
-		<img src=<?php echo $image; ?> alt=<?php echo $telop;?>><br>
-		最高気温:<?php echo $max_temp ?><br>
-		最低気温:<?php echo $min_temp ?><br>
+			<?php echo $datelabel ?>の天気<br>
+			<?php echo $telop?><br>
+			<img src=<?php echo $image; ?> alt=<?php echo $telop;?>><br>
+			最高気温:<?php echo $max_temp ?><br>
+			最低気温:<?php echo $min_temp ?><br>
+		</div>
+		<div>
 		</div>
 	</div>
-</div>
-<section id="login" class="container-fluid text-center">
+
+<section id="login" class="text-center">
   <h3>SELF HELP</h3>
   <p>We love challenge!</p>
   <p>i have created website that challenge yourself and getting better day by day</p>
